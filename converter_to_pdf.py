@@ -12,10 +12,7 @@ class Converter:
         files = list(filter(filter_docx, os.listdir(self.CURRECT_DIR)))
         for file in range(len(files)):
             if re.search(r'~.\w+.docx', files[file]) is not None:
-                # print(re.search(r'~.\w+.docx', files[file]).group())
                 files.remove(re.search(r'~.\w+.docx', files[file]).group())
-            # else:
-                # print(re.search(r'~.\w+.docx', files[file]))
         print(f'All doc in dir: {files}')
         print(f'Count: {len(files)}')
         return files
